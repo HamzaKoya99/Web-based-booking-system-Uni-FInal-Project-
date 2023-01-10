@@ -1,0 +1,96 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "page": "index",
+      "routeType": "page",
+      "layout": "main"
+    },
+    {
+      "path": "/Conditions",
+      "page": "Conditions",
+      "layout": "main"
+    },
+    {
+      "path": "/Treatments",
+      "page": "Treatments",
+      "layout": "main"
+    },
+    {
+      "path": "/Medicines",
+      "page": "Medicines",
+      "layout": "main"
+    },
+    {
+      "path": "/Request_Appointment",
+      "page": "Request_Appointment",
+      "layout": "main"
+    },
+    {
+      "path": "/Staff_Registration",
+      "page": "Staff_Registration",
+      "layout": "main",
+      "exec": "/api/Staff_Registration"
+    },
+    {
+      "path": "/Staff_Dashboard",
+      "page": "Staff_Dashboard",
+      "layout": "main"
+    },
+    {
+      "path": "/Staff_Login",
+      "page": "Staff_Login",
+      "layout": "main"
+    },
+    {
+      "path": "/All_Appointments",
+      "page": "All_Appointments",
+      "layout": "main"
+    },
+    {
+      "path": "/Calendar",
+      "page": "Calendar",
+      "layout": "main"
+    },
+    {
+      "path": "/Add_Appointments",
+      "page": "Add_Appointments",
+      "layout": "main"
+    },
+    {
+      "path": "/Delete_Appointments",
+      "page": "Delete_Appointments",
+      "layout": "main"
+    },
+    {
+      "path": "/Sprains_and_Strains",
+      "page": "Sprains_and_Strains",
+      "layout": "main"
+    },
+    {
+      "path": "/Add_Appointments",
+      "page": "Add_Appointments",
+      "layout": "main"
+    },
+    {
+      "path": "/Request_Appointment",
+      "page": "Request_Appointment",
+      "layout": "main"
+    },
+    {
+      "path": "/Calendar",
+      "page": "Calendar",
+      "layout": "main"
+    },
+    {
+      "path": "/Home",
+      "page": "Home",
+      "layout": "main"
+    },
+    {
+      "path": "/Conditions",
+      "page": "Conditions",
+      "layout": "main"
+    }
+  ]
+}

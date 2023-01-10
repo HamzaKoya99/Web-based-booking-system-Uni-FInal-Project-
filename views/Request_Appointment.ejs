@@ -1,0 +1,169 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="Request_Appointment" appConnect="local" components="{dmxBootstrap5Navigation:{},dmxValidator:{},dmxBrowser:{},dmxNotifications:{},dmxDatePicker:{},dmxGooglePlaces:{}}" jquery_slim_35="cdn" moment_2="cdn" -->
+<dmx-notifications id="notifies1" position="bottom" align="left" opacity="1.0"></dmx-notifications>
+<div is="dmx-browser" id="browser1"></div>
+<meta name="ac:route" content="/Request_Appointment">
+
+<head>
+  <!-- jQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <!-- CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
+  <!-- datetimepicker jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
+  </script>
+
+  <!-- Basic inline styling -->
+  <style>
+    body {
+      text-align: center;
+    }
+
+    p {
+      font-size: 25px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+
+<header class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end">
+          <a class="navbar-brand me-auto" href="#">Pain Center</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1_collapse" aria-controls="navbar1_collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbar1_collapse">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="/Home" internal>Home</a>
+              <a class="nav-item nav-link" href="/Conditions" internal>Conditions</a>
+              <a class="nav-item nav-link" href="/Treatments" internal>Treatments</a>
+              <a class="nav-item nav-link" href="/Medicines" internal>Medicines</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container mt-5">
+  <form id="register1" is="dmx-serverconnect-form" method="post" action="/api/Appointment/RAP" dmx-on:invalid="date1.validate();notifies1.warning('Sorry, Appointment is not available at this time. Please choose a different Date or Time.')" dmx-on:success="notifies1.success('Request send, You\'ll shortly receive a confirmation email.');register1.reset()">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-7 col-md-5 text-center">
+        <div class="fdb-box fdb-touch">
+          <div class="row">
+            <div class="col">
+              <h1 class="text-primary">Request An Appointment</h1>
+              <h5>"*" Indicates required fields</h5>
+            </div>
+          </div>
+          <div class="row">
+            <h6 class="text-start" id="bs5formgrouphelp1">First Name</h6>
+            <input type="text" id="inp_First_Name" name="First_Name" class="form-control" placeholder="First Name *" required="">
+
+          </div>
+          <div class="row mt-4">
+            <h6 class="text-start" id="bs5formgrouphelp2">Last Name</h6>
+            <input type="text" id="inp_Last_Name" name="Last_Name" class="form-control" placeholder="Last Name *" required="">
+
+          </div>
+          <div class="row mt-4">
+            <h6 class="text-start" id="bs5formgrouphelp3">Email</h6>
+            <input type="text" id="inp_email" name="Email" class="form-control" placeholder="Email *" required="">
+          </div>
+
+          <div class="row mt-4">
+            <h6 class="text-start" id="bs5formgrouphelp4">Phone Number</h6>
+            <input type="text" id="inp_Phone_Number" name="Phone_Number" class="form-control" placeholder="Phone Number" required="">
+
+          </div>
+          <div class="row mt-4">
+            <h6 class="text-start" id="bs5formgrouphelp5">NHS Number</h6>
+            <input type="text" id="inp_NHS_Number" name="NHS_Number" class="form-control" placeholder="NHS Number" required="">
+
+          </div>
+          <div class="row mt-4">
+            <h6 class="text-start" id="bs5formgrouphelp6">Area of Pain</h6>
+            <input type="text" id="inp_Area_Of_Pain" name="Area_Of_Pain" class="form-control" placeholder="Area Of Pain" required="">
+
+          </div>
+          <div class="row mt-4">
+            <h6 class="text-start" id="bs5formgrouphelp7">Would you like to give us any more information?</h6>
+            <input id="inp_Pain_Information" name="Pain_information" class="form-control mb-1" placeholder="Any symptoms, medical history, when the pain started etc.">
+            <p class="text-end"></p>
+
+          </div>
+          <div class="row">
+            <h6 class="text-start" id="bs5formgrouphelp8">Preffered method of contact *</h6>
+            <div class="col-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Yes" id="input1" name="Contact_By_Phone">
+                <label class="form-check-label" for="input1">Phone</label>
+              </div>
+            </div>
+            <div class="col-3 offset-1">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Yes" id="input2" name="Contact_By_Email">
+                <label class="form-check-label" for="input2">Email</label>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col">
+              <h6 class="text-start" id="bs5formgrouphelp9">Please Pick a Date and Time of Appointment*</h6>
+            </div>
+            <div class="col">
+
+              <input class="datetimepicker" id="date1" name="DateOfAppointment" required="" type="text">
+
+              <script type="text/javascript">
+                $(".datetimepicker").each(function () {
+                                                  $(this).datetimepicker({
+                                                      'minTime': '8:00',
+                                                      'maxTime': '17:00',
+                                                      'step': 30
+                                                  });
+                                                });
+              </script>
+
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col">
+              <button id="register1_submit" class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<footer>
+  <section class="contact-area mt-5" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="contact-content text-center">
+            <div class="hr"></div>
+            <h1>Pain Center</h1>
+            <h6>221b Baker St, London NW1 6XE</h6>
+            <h6>Phone: +01 2345 6789 12<span>|</span>Email: pain_center@gmail.com</h6>
+            <div class="contact-social">
+              <ul>
+                <li><a class="hover-target" href=""><i class="fab fa-facebook-f"></i></a></li>
+                <li><a class="hover-target" href=""><i class="fab fa-instagram"></i></a></li>
+                <li><a class="hover-target" href=""><i class="fab fa-twitter"></i></a></li>
+                <li><a class="hover-target" href=""><i class="fab fa-youtube"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <p class="text-center">Copyright &copy; 2022 All Rights Reserved.</p>
+</footer>

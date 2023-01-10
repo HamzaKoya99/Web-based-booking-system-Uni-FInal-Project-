@@ -1,0 +1,14 @@
+
+exports.up = function(knex) {
+  return knex.schema
+    .table('Request an Appointment', async function (table) {
+      table.datetime('DateOfAppointment').defaultTo(knex.fn.now()).alter();
+    })
+};
+
+exports.down = function(knex) {
+  return knex.schema
+    .table('Request an Appointment', async function (table) {
+      table.string('DateOfAppointment', 255).defaultTo().alter();
+    })
+};

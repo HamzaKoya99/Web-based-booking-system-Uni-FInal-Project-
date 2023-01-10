@@ -1,0 +1,71 @@
+[debug] [2022-12-13T10:33:16.716Z] ----------------------------------------------------------------------
+[debug] [2022-12-13T10:33:16.718Z] Command:       C:\Users\user\scoop\apps\nodejs-lts\current\.\node.exe C:\Users\user\scoop\apps\nodejs-lts\current\bin\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2022-12-13T10:33:16.718Z] CLI Version:   11.16.1
+[debug] [2022-12-13T10:33:16.718Z] Platform:      win32
+[debug] [2022-12-13T10:33:16.718Z] Node Version:  v18.12.1
+[debug] [2022-12-13T10:33:16.719Z] Time:          Tue Dec 13 2022 10:33:16 GMT+0000 (Greenwich Mean Time)
+[debug] [2022-12-13T10:33:16.719Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-13T10:33:16.836Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-13T10:33:16.836Z] > authorizing via signed-in user (koolhamzakoya@gmail.com)
+[debug] [2022-12-13T10:33:16.837Z] [iam] checking project online-injury-treatments for permissions ["firebase.projects.get"]
+[debug] [2022-12-13T10:33:16.838Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-injury-treatments:testIamPermissions [none]
+[debug] [2022-12-13T10:33:16.838Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-injury-treatments:testIamPermissions x-goog-quota-user=projects/online-injury-treatments
+[debug] [2022-12-13T10:33:16.838Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-injury-treatments:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-12-13T10:33:17.796Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-injury-treatments:testIamPermissions 200
+[debug] [2022-12-13T10:33:17.796Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-injury-treatments:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-12-13T10:33:17.798Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments [none]
+[debug] [2022-12-13T10:33:18.769Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments 200
+[debug] [2022-12-13T10:33:18.769Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments {"projectId":"online-injury-treatments","projectNumber":"308862344324","displayName":"Online Injury and Treatments","name":"projects/online-injury-treatments","resources":{"hostingSite":"online-injury-treatments"},"state":"ACTIVE","etag":"1_e43b46b5-9cf2-468a-be9f-764cb6da71b6"}
+[info] 
+[info] === Serving from 'C:\Users\user\Desktop\University Documents\Final Project\Online Injury'...
+[info] 
+[debug] [2022-12-13T10:33:18.774Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/online-injury-treatments/sites 
+[debug] [2022-12-13T10:33:19.976Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/online-injury-treatments/sites 200
+[debug] [2022-12-13T10:33:19.976Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/online-injury-treatments/sites {"sites":[{"name":"projects/online-injury-treatments/sites/online-injury-treatments","defaultUrl":"https://online-injury-treatments.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2022-12-13T10:33:19.976Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments/webApps/-/config [none]
+[debug] [2022-12-13T10:33:20.938Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments/webApps/-/config 200
+[debug] [2022-12-13T10:33:20.939Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments/webApps/-/config {"projectId":"online-injury-treatments","storageBucket":"online-injury-treatments.appspot.com","apiKey":"AIzaSyBoFSXKMNUqRWCFpHi9-SUy4vhjA2TQq5k","authDomain":"online-injury-treatments.firebaseapp.com","messagingSenderId":"308862344324"}
+[debug] [2022-12-13T10:33:20.946Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments [none]
+[debug] [2022-12-13T10:33:21.224Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments 200
+[debug] [2022-12-13T10:33:21.224Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments {"projectId":"online-injury-treatments","projectNumber":"308862344324","displayName":"Online Injury and Treatments","name":"projects/online-injury-treatments","resources":{"hostingSite":"online-injury-treatments"},"state":"ACTIVE","etag":"1_e43b46b5-9cf2-468a-be9f-764cb6da71b6"}
+[info] i  hosting[online-injury-treatments]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[online-injury-treatments]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2022-12-13T11:32:29.836Z] ----------------------------------------------------------------------
+[debug] [2022-12-13T11:32:29.838Z] Command:       C:\Users\user\scoop\apps\nodejs-lts\current\.\node.exe C:\Users\user\scoop\apps\nodejs-lts\current\bin\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2022-12-13T11:32:29.839Z] CLI Version:   11.16.1
+[debug] [2022-12-13T11:32:29.839Z] Platform:      win32
+[debug] [2022-12-13T11:32:29.839Z] Node Version:  v18.12.1
+[debug] [2022-12-13T11:32:29.840Z] Time:          Tue Dec 13 2022 11:32:29 GMT+0000 (Greenwich Mean Time)
+[debug] [2022-12-13T11:32:29.840Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-13T11:32:29.955Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-13T11:32:29.955Z] > authorizing via signed-in user (koolhamzakoya@gmail.com)
+[debug] [2022-12-13T11:32:29.955Z] [iam] checking project online-injury-treatments for permissions ["firebase.projects.get"]
+[debug] [2022-12-13T11:32:29.956Z] > refreshing access token with scopes: []
+[debug] [2022-12-13T11:32:29.958Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-13T11:32:29.958Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-13T11:32:30.566Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-12-13T11:32:30.566Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-13T11:32:30.590Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-injury-treatments:testIamPermissions [none]
+[debug] [2022-12-13T11:32:30.591Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-injury-treatments:testIamPermissions x-goog-quota-user=projects/online-injury-treatments
+[debug] [2022-12-13T11:32:30.591Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-injury-treatments:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-12-13T11:32:31.447Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-injury-treatments:testIamPermissions 200
+[debug] [2022-12-13T11:32:31.448Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-injury-treatments:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-12-13T11:32:31.451Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments [none]
+[debug] [2022-12-13T11:32:32.268Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments 200
+[debug] [2022-12-13T11:32:32.269Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments {"projectId":"online-injury-treatments","projectNumber":"308862344324","displayName":"Online Injury and Treatments","name":"projects/online-injury-treatments","resources":{"hostingSite":"online-injury-treatments"},"state":"ACTIVE","etag":"1_e43b46b5-9cf2-468a-be9f-764cb6da71b6"}
+[info] 
+[info] === Serving from 'C:\Users\user\Desktop\University Documents\Final Project\Online Injury'...
+[info] 
+[debug] [2022-12-13T11:32:32.274Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/online-injury-treatments/sites 
+[debug] [2022-12-13T11:32:33.699Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/online-injury-treatments/sites 200
+[debug] [2022-12-13T11:32:33.699Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/online-injury-treatments/sites {"sites":[{"name":"projects/online-injury-treatments/sites/online-injury-treatments","defaultUrl":"https://online-injury-treatments.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2022-12-13T11:32:33.700Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments/webApps/-/config [none]
+[debug] [2022-12-13T11:32:34.425Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments/webApps/-/config 200
+[debug] [2022-12-13T11:32:34.426Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments/webApps/-/config {"projectId":"online-injury-treatments","storageBucket":"online-injury-treatments.appspot.com","apiKey":"AIzaSyBoFSXKMNUqRWCFpHi9-SUy4vhjA2TQq5k","authDomain":"online-injury-treatments.firebaseapp.com","messagingSenderId":"308862344324"}
+[debug] [2022-12-13T11:32:34.437Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments [none]
+[debug] [2022-12-13T11:32:34.734Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments 200
+[debug] [2022-12-13T11:32:34.734Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/online-injury-treatments {"projectId":"online-injury-treatments","projectNumber":"308862344324","displayName":"Online Injury and Treatments","name":"projects/online-injury-treatments","resources":{"hostingSite":"online-injury-treatments"},"state":"ACTIVE","etag":"1_e43b46b5-9cf2-468a-be9f-764cb6da71b6"}
+[info] i  hosting[online-injury-treatments]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[online-injury-treatments]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}

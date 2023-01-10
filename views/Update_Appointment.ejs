@@ -1,0 +1,181 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="Update_Appointment" appConnect="local" components="{dmxBootstrap5Navigation:{},dmxBootstrap5TableGenerator:{}}" -->
+<meta name="ac:route" content="/Update_Appointment">
+<dmx-serverconnect id="serverconnect1" url="/api/Update" dmx-param:search="text1.value" dmx-param:appointment_id="tableRepeat1[0].Appointment_id"></dmx-serverconnect>
+
+<head>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <!-- CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
+    <!-- datetimepicker jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
+    </script>
+
+    <!-- Basic inline styling -->
+    <style>
+        body {
+            text-align: center;
+        }
+
+        p {
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<header class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end">
+                    <a class="navbar-brand me-auto" href="#">Pain Center</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1_collapse" aria-controls="navbar1_collapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbar1_collapse">
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link active" href="/Staff_Dashboard" internal>Dashboard</a>
+                            <a class="nav-item nav-link" href="/Calendar" internal>Calendar</a>
+                            <a class="nav-item nav-link" href="/All_Appointments" internal>All Appointments</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container mt-5">
+    <h1 class="text-center text-primary">Update Appointments</h1>
+</div>
+<div class="container mt-5">
+    <div class="row row-cols-12">
+        <div class="offset-3 col-6">
+            <input id="text1" name="text1" type="text" class="form-control" placeholder="Search by First Name, Last Name or Appointment ID">
+        </div>
+
+    </div>
+
+    <section class="bg-white">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Appointment</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Email</th>
+                        <th>Phone number</th>
+                        <th>Nhs number</th>
+                        <th>Date of appointment</th>
+                        <th>Contact by phone</th>
+                        <th>Contact by email</th>
+                        <th>Area of pain</th>
+                        <th>Pain information</th>
+                        <th scope="row">Update</th>
+                    </tr>
+                </thead>
+                <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="serverconnect1.data.query" id="tableRepeat1">
+                    <tr>
+                        <td dmx-text="Appointment_id"></td>
+                        <td dmx-text="First_Name"></td>
+                        <td dmx-text="Last_Name"></td>
+                        <td dmx-text="Email"></td>
+                        <td dmx-text="Phone_Number"></td>
+                        <td dmx-text="NHS_Number"></td>
+                        <td dmx-text="DateOfAppointment"></td>
+                        <td dmx-text="Contact_By_Phone"></td>
+                        <td dmx-text="Contact_By_Email"></td>
+                        <td dmx-text="Area_Of_Pain"></td>
+                        <td dmx-text="Pain_information"></td>
+                        <td>
+                            <form id="form1" method="post" is="dmx-serverconnect-form" action="/api/Update">
+                                <input id="text2" name="text2" type="hidden" class="form-control" dmx-bind:value="Appointment_id">
+                                <button id="btn1" class="btn btn-primary" type="submit" dmx-on:click="serverconnect1.load({appointment_id: Appointment_id})">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="bg-white">
+        <form is="dmx-serverconnect-form" id="serverconnectform1" method="post" action="/api/Update" dmx-generator="bootstrap5" dmx-form-type="horizontal" dmx-populate="serverconnect1.data.query">
+            <input type="hidden" name="Appointment_id" id="inp_Appointment_id" dmx-bind:value="serverconnect1.data.query[0].Appointment_id">
+            <div class="form-group mb-3 row">
+                <label for="inp_First_Name" class="col-sm-2 col-form-label">First name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inp_First_Name" name="First_Name" dmx-bind:value="serverconnect1.data.query[0].First_Name" aria-describedby="inp_First_Name_help" placeholder="Enter First name">
+                </div>
+            </div>
+            <div class="form-group mb-3 row">
+                <label for="inp_Last_Name" class="col-sm-2 col-form-label">Last name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inp_Last_Name" name="Last_Name" dmx-bind:value="serverconnect1.data.query[0].Last_Name" aria-describedby="inp_Last_Name_help" placeholder="Enter Last name">
+                </div>
+            </div>
+            <div class="form-group mb-3 row">
+                <label for="inp_Email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inp_Email" name="Email" dmx-bind:value="serverconnect1.data.query[0].Email" aria-describedby="inp_Email_help" placeholder="Enter Email">
+                </div>
+            </div>
+            <div class="form-group mb-3 row">
+                <label for="inp_Phone_Number" class="col-sm-2 col-form-label">Phone number</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inp_Phone_Number" name="Phone_Number" dmx-bind:value="serverconnect1.data.query[0].Phone_Number" aria-describedby="inp_Phone_Number_help" placeholder="Enter Phone number">
+                </div>
+            </div>
+            <div class="form-group mb-3 row">
+                <label for="inp_NHS_Number" class="col-sm-2 col-form-label">Nhs number</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inp_NHS_Number" name="NHS_Number" dmx-bind:value="serverconnect1.data.query[0].NHS_Number" aria-describedby="inp_NHS_Number_help" placeholder="Enter Nhs number">
+                </div>
+            </div>
+            <div class="form-group mb-3 row">
+                <label for="inp_DateOfAppointment" class="col-sm-2 col-form-label">Date of appointment</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="inp_DateOfAppointment" name="DateOfAppointment" dmx-bind:value="serverconnect1.data.query[0].DateOfAppointment" aria-describedby="inp_DateOfAppointment_help" placeholder="Enter Date of appointment">
+                </div>
+            </div>
+            <div class="form-group mb-3 row">
+                <legend class="col-sm-2 col-form-label">Contact by phone</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="inp_Contact_By_Phone" name="Contact_By_Phone" dmx-bind:value="serverconnect1.data.query[0].Contact_By_Phone">
+                        <label class="form-check-label" for="inp_Contact_By_Phone">Contact by phone</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-3 row">
+                <legend class="col-sm-2 col-form-label">Contact by email</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="inp_Contact_By_Email" name="Contact_By_Email" dmx-bind:value="serverconnect1.data.query[0].Contact_By_Email">
+                        <label class="form-check-label" for="inp_Contact_By_Email">Contact by email</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-3 row">
+                <label for="inp_Area_Of_Pain" class="col-sm-2 col-form-label">Area of pain</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inp_Area_Of_Pain" name="Area_Of_Pain" dmx-bind:value="serverconnect1.data.query[0].Area_Of_Pain" aria-describedby="inp_Area_Of_Pain_help" placeholder="Enter Area of pain">
+                </div>
+            </div>
+            <div class="form-group mb-3 row">
+                <label for="inp_Pain_information" class="col-sm-2 col-form-label">Pain information</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inp_Pain_information" name="Pain_information" dmx-bind:value="serverconnect1.data.query[0].Pain_information" aria-describedby="inp_Pain_information_help" placeholder="Enter Pain information">
+                </div>
+            </div>
+            <div class="form-group mb-3 row">
+                <div class="col-sm-2">&nbsp;</div>
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary" dmx-bind:value="serverconnect1.data.query[0].Save" dmx-bind:disabled="state.executing">Save <span class="spinner-border spinner-border-sm" role="status" dmx-show="state.executing"></span></button>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>

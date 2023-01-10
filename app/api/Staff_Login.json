@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/Staff_Login.ejs",
+      "linkedForm": "login1"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "Staff_Email",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "Staff_Email"
+      },
+      {
+        "type": "text",
+        "fieldName": "Staff_Password",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "Staff_Password"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "identity",
+      "module": "auth",
+      "action": "login",
+      "options": {
+        "provider": "Security",
+        "remember": "",
+        "username": "{{$_POST.Staff_Email}}",
+        "password": "{{$_POST.Staff_Password}}"
+      },
+      "output": true,
+      "meta": []
+    }
+  }
+}

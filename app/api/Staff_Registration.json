@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/Staff_Registration.ejs",
+      "linkedForm": "serverconnectform1"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "Staff_Email",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            },
+            "core:email": {
+              "param": ""
+            }
+          }
+        },
+        "name": "Staff_Email"
+      },
+      {
+        "type": "text",
+        "fieldName": "Staff_Name",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "Staff_Name"
+      },
+      {
+        "type": "text",
+        "fieldName": "Staff_Password",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "Staff_Password"
+      },
+      {
+        "type": "text",
+        "fieldName": "Confirm Password",
+        "options": {
+          "rules": {
+            "core:equalTo": {
+              "param": "Staff_Password"
+            }
+          }
+        },
+        "name": "Confirm Password"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "validate",
+        "module": "validator",
+        "action": "validate",
+        "options": {
+          "data": [
+            {
+              "name": "validate_1",
+              "value": "{{$_POST.Staff_Email}}",
+              "rules": {
+                "db:notexists": {
+                  "param": {
+                    "connection": "Database",
+                    "table": "Staff_Registration",
+                    "column": "Staff_Email"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "insert",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "Database",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "Staff_Registration",
+                "column": "Staff_Name",
+                "type": "text",
+                "value": "{{$_POST.Staff_Name}}"
+              },
+              {
+                "table": "Staff_Registration",
+                "column": "Staff_Password",
+                "type": "text",
+                "value": "{{$_POST.Staff_Password}}"
+              },
+              {
+                "table": "Staff_Registration",
+                "column": "Staff_Email",
+                "type": "text",
+                "value": "{{$_POST.Staff_Email}}"
+              }
+            ],
+            "table": "Staff_Registration",
+            "returning": "Staff_id",
+            "query": "INSERT INTO Staff_Registration\n(Staff_Name, Staff_Password, Staff_Email) VALUES (:P1 /* {{$_POST.Staff_Name}} */, :P2 /* {{$_POST.Staff_Password}} */, :P3 /* {{$_POST.Staff_Email}} */)",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST.Staff_Name}}",
+                "test": ""
+              },
+              {
+                "name": ":P2",
+                "type": "expression",
+                "value": "{{$_POST.Staff_Password}}",
+                "test": ""
+              },
+              {
+                "name": ":P3",
+                "type": "expression",
+                "value": "{{$_POST.Staff_Email}}",
+                "test": ""
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ]
+      }
+    ]
+  }
+}

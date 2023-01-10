@@ -1,0 +1,16 @@
+{
+  "name": "secu",
+  "module": "auth",
+  "action": "provider",
+  "options": {
+    "secret": "OLY2PG713Zajzo5",
+    "provider": "Single",
+    "connection": "Database"
+  },
+  "meta": [
+    {
+      "name": "identity",
+      "type": "text"
+    }
+  ]
+}

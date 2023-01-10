@@ -1,0 +1,309 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/Request_Appointment.ejs",
+      "linkedForm": "register1"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "First_Name",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "First_Name"
+      },
+      {
+        "type": "text",
+        "fieldName": "Last_Name",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "Last_Name"
+      },
+      {
+        "type": "text",
+        "fieldName": "Email",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "Email"
+      },
+      {
+        "type": "text",
+        "fieldName": "Phone_Number",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "Phone_Number"
+      },
+      {
+        "type": "text",
+        "fieldName": "NHS_Number",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "NHS_Number"
+      },
+      {
+        "type": "text",
+        "fieldName": "Contact By Phone",
+        "name": "Contact_By_Phone"
+      },
+      {
+        "type": "text",
+        "fieldName": "Contact By Email",
+        "name": "Contact_By_Email"
+      },
+      {
+        "type": "text",
+        "fieldName": "DateOfAppointment",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "DateOfAppointment"
+      },
+      {
+        "type": "text",
+        "fieldName": "Area_Of_Pain",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "Area_Of_Pain"
+      },
+      {
+        "type": "text",
+        "fieldName": "Pain information",
+        "name": "Pain_information"
+      },
+      {
+        "type": "text",
+        "fieldName": "input1",
+        "name": "input1"
+      },
+      {
+        "type": "text",
+        "fieldName": "input2",
+        "name": "input2"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "",
+        "module": "mail",
+        "action": "send",
+        "options": {
+          "instance": "mail",
+          "subject": "Confirmation of Appointment",
+          "fromName": "Pain Center",
+          "fromEmail": "koolhamzakoya@gmail.com",
+          "replyTo": "koolhamzakoya@gmail.com",
+          "toName": "{{$_POST.First_Name+$_POST.Last_Name}}",
+          "toEmail": "{{$_POST.Email}}",
+          "body": "Thank you for booking an Appointment with Pain Center!!\n\nThis is a Confirmation email for your appointment.\n\nName: {{$_POST.First_Name+$_POST.Last_Name}}\nDate of Appointment: {{$_POST.DateOfAppointment}}\nArea of Pain: {{$_POST.Area_Of_Pain}}\nInformation of Pain: {{$_POST.Pain_information}}\n\n\nIf you decide to cancel the appointment, please contact us soon as possible.\nemail: pain_center@gmail.com\nphone: 12345698"
+        },
+        "output": false
+      },
+      {
+        "name": "validate",
+        "module": "validator",
+        "action": "validate",
+        "options": {
+          "data": [
+            {
+              "name": "validate_2",
+              "value": "{{$_POST.DateOfAppointment}}",
+              "rules": {
+                "db:notexists": {
+                  "param": {
+                    "connection": "Database",
+                    "table": "Request an Appointment",
+                    "column": "DateOfAppointment"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "insert",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "Database",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "Request an Appointment",
+                "column": "First_Name",
+                "type": "text",
+                "value": "{{$_POST.First_Name}}"
+              },
+              {
+                "table": "Request an Appointment",
+                "column": "Last_Name",
+                "type": "text",
+                "value": "{{$_POST.Last_Name}}"
+              },
+              {
+                "table": "Request an Appointment",
+                "column": "Email",
+                "type": "text",
+                "value": "{{$_POST.Email}}"
+              },
+              {
+                "table": "Request an Appointment",
+                "column": "Phone_Number",
+                "type": "text",
+                "value": "{{$_POST.Phone_Number}}"
+              },
+              {
+                "table": "Request an Appointment",
+                "column": "NHS_Number",
+                "type": "text",
+                "value": "{{$_POST.NHS_Number}}"
+              },
+              {
+                "table": "Request an Appointment",
+                "column": "DateOfAppointment",
+                "type": "datetime",
+                "value": "{{$_POST.DateOfAppointment}}"
+              },
+              {
+                "table": "Request an Appointment",
+                "column": "Contact_By_Phone",
+                "type": "boolean",
+                "value": "{{$_POST.Contact_By_Phone}}"
+              },
+              {
+                "table": "Request an Appointment",
+                "column": "Contact_By_Email",
+                "type": "boolean",
+                "value": "{{$_POST.Contact_By_Email}}"
+              },
+              {
+                "table": "Request an Appointment",
+                "column": "Area_Of_Pain",
+                "type": "text",
+                "value": "{{$_POST.Area_Of_Pain}}"
+              },
+              {
+                "table": "Request an Appointment",
+                "column": "Pain_information",
+                "type": "text",
+                "value": "{{$_POST.Pain_information}}"
+              }
+            ],
+            "table": "Request an Appointment",
+            "returning": "Appointment_id",
+            "query": "INSERT INTO \"Request an Appointment\"\n(First_Name, Last_Name, Email, Phone_Number, NHS_Number, DateOfAppointment, Contact_By_Phone, Contact_By_Email, Area_Of_Pain, Pain_information) VALUES (:P1 /* {{$_POST.First_Name}} */, :P2 /* {{$_POST.Last_Name}} */, :P3 /* {{$_POST.Email}} */, :P4 /* {{$_POST.Phone_Number}} */, :P5 /* {{$_POST.NHS_Number}} */, :P6 /* {{$_POST.DateOfAppointment}} */, :P7 /* {{$_POST.Contact_By_Phone}} */, :P8 /* {{$_POST.Contact_By_Email}} */, :P9 /* {{$_POST.Area_Of_Pain}} */, :P10 /* {{$_POST.Pain_information}} */)",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST.First_Name}}",
+                "test": ""
+              },
+              {
+                "name": ":P2",
+                "type": "expression",
+                "value": "{{$_POST.Last_Name}}",
+                "test": ""
+              },
+              {
+                "name": ":P3",
+                "type": "expression",
+                "value": "{{$_POST.Email}}",
+                "test": ""
+              },
+              {
+                "name": ":P4",
+                "type": "expression",
+                "value": "{{$_POST.Phone_Number}}",
+                "test": ""
+              },
+              {
+                "name": ":P5",
+                "type": "expression",
+                "value": "{{$_POST.NHS_Number}}",
+                "test": ""
+              },
+              {
+                "name": ":P6",
+                "type": "expression",
+                "value": "{{$_POST.DateOfAppointment}}",
+                "test": ""
+              },
+              {
+                "name": ":P7",
+                "type": "expression",
+                "value": "{{$_POST.Contact_By_Phone}}",
+                "test": ""
+              },
+              {
+                "name": ":P8",
+                "type": "expression",
+                "value": "{{$_POST.Contact_By_Email}}",
+                "test": ""
+              },
+              {
+                "name": ":P9",
+                "type": "expression",
+                "value": "{{$_POST.Area_Of_Pain}}",
+                "test": ""
+              },
+              {
+                "name": ":P10",
+                "type": "expression",
+                "value": "{{$_POST.Pain_information}}",
+                "test": ""
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ]
+      }
+    ]
+  }
+}

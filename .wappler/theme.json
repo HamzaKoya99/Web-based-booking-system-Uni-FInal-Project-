@@ -1,0 +1,8 @@
+{
+  "bootstrap5": {
+    "basic": {
+      "border-width": "3px"
+    },
+    "advanced": {}
+  }
+}

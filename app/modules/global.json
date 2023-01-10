@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/Request_Appointment.ejs",
+      "linkedForm": "serverconnectform1"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "First Name",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "First Name"
+      },
+      {
+        "type": "text",
+        "fieldName": "Last Name",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "Last Name"
+      },
+      {
+        "type": "text",
+        "fieldName": "Email",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            },
+            "core:email": {
+              "param": ""
+            }
+          }
+        },
+        "name": "Email"
+      },
+      {
+        "type": "text",
+        "fieldName": "Phone Number",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            },
+            "core:number": {
+              "param": ""
+            }
+          }
+        },
+        "name": "Phone Number"
+      },
+      {
+        "type": "text",
+        "fieldName": "NHS Number",
+        "name": "NHS Number"
+      },
+      {
+        "type": "text",
+        "fieldName": "Contact By Phone",
+        "name": "Contact By Phone"
+      },
+      {
+        "type": "text",
+        "fieldName": "Contact By Email",
+        "name": "Contact By Email"
+      },
+      {
+        "type": "text",
+        "fieldName": "DateOfAppointment",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            }
+          }
+        },
+        "name": "DateOfAppointment"
+      }
+    ]
+  },
+  "exec": {}
+}

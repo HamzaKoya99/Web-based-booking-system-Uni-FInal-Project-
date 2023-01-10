@@ -1,0 +1,60 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="Calendar" appConnect="local" components="{dmxCalendar:{},dmxBootstrap5Navigation:{}}" -->
+<dmx-serverconnect id="serverconnect1" url="/api/Appointments"></dmx-serverconnect>
+<meta name="ac:route" content="/Calendar">
+
+<header class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end">
+                    <a class="navbar-brand me-auto" href="#">Pain Center</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1_collapse" aria-controls="navbar1_collapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbar1_collapse">
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link active" href="/Staff_Dashboard" internal>Dashboard</a>
+                            <a class="nav-item nav-link" href="/Calendar" internal>Calendar</a>
+                            <a class="nav-item nav-link" href="/All_Appointments" internal>All Appointments</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container mt-5">
+    <h1 class="text-center text-primary">Calendar</h1>
+    <section class="bg-white">
+        <div class="container">
+            <dmx-calendar id="calendar1" views="dayGridMonth,dayGridWeek,dayGridDay" aspect-ratio="1.7" hide-non-current-dates="true">
+                <dmx-calendar-source id="source1" dmx-bind:events="serverconnect1.data.Calendar_Query" event-title="First_Name+Last_Name" event-start="DateOfAppointment" event-end="DateOfAppointment"></dmx-calendar-source>
+            </dmx-calendar>
+        </div>
+    </section>
+</div>
+<footer>
+    <section class="contact-area mt-5" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="contact-content text-center">
+                        <div class="hr"></div>
+                        <h1>Pain Center</h1>
+                        <h6>221b Baker St, London NW1 6XE</h6>
+                        <h6>Phone: +01 2345 6789 12<span>|</span>Email: pain_center@gmail.com</h6>
+                        <div class="contact-social">
+                            <ul>
+                                <li><a class="hover-target" href=""><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a class="hover-target" href=""><i class="fab fa-instagram"></i></a></li>
+                                <li><a class="hover-target" href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a class="hover-target" href=""><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <p class="text-center">Copyright &copy; 2022 All Rights Reserved.</p>
+</footer>

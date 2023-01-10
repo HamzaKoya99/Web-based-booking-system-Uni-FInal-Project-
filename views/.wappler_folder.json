@@ -1,0 +1,90 @@
+{
+  "Conditions.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Treatments.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Medicines.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Request_an_Appointment.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Appointment.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Request_Appointment.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "LogIn.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Date.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Time.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "time.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Staff_Registration.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Staff_LogIn.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Staff_Login.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "All_Appointments.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Calendar.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Staff_Dashboard.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Add_Appointments.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Delete_Appointments.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Update_Appointment.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "footer.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Sprains_and_Strains.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Home.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  }
+}

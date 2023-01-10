@@ -1,0 +1,73 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="Staff_HomePage" appConnect="local" components="{dmxBootstrap5Navigation:{},dmxDataTraversal:{},dmxCalendar:{},dmxDatastore:{},dmxBootstrap5TableGenerator:{},dmxCharts:{},dmxNotifications:{}}" -->
+<dmx-notifications id="notifies1"></dmx-notifications>
+<dmx-serverconnect id="serverconnect1" url="/api/Appointments" dmx-param:search="text1.value"></dmx-serverconnect>
+<meta name="ac:route" content="/Staff_Dashboard">
+<header class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end">
+                    <a class="navbar-brand me-auto" href="#">Pain Center</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1_collapse" aria-controls="navbar1_collapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbar1_collapse">
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link active" href="/Staff_Dashboard" internal>Dashboard</a>
+                            <a class="nav-item nav-link" href="/Calendar" internal>Calendar</a>
+                            <a class="nav-item nav-link" href="/All_Appointments" internal>All Appointments</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="bg-white">
+    <div class="container">
+        <h1 class="text-center text-primary">Dashboard</h1>
+    </div>
+</section>
+<section class="bg-white">
+    <div class="container wappler-block pt-4 pb-4">
+        <div class="row">
+            <div class="col-12 col-sm-8 offset-sm-2 offset-md-0 col-md-4 text-center">
+                <h4 class="text-center text-dark">Add Appointments</h4>
+                <a href="/Add_Appointments" class="btn btn-primary" internal>Add</a>
+            </div>
+            <div class="col-12 col-sm-8 offset-sm-2 offset-md-0 col-md-4 text-center">
+                <h4 class="text-center text-dark">Delete Appointments</h4>
+                <a href="/Delete_Appointments" class="btn btn-primary" internal>Delete</a>
+            </div>
+            <div class="col text-center">
+                <h4 class="text-center text-dark">Register Staff</h4>
+                <a href="/Staff_Registration" class="btn btn-primary" internal>Register</a>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer-bs">
+    <section class="contact-area mt-5" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="contact-content text-center">
+                        <div class="hr"></div>
+                        <h1>Pain Center</h1>
+                        <h6>221b Baker St, London NW1 6XE</h6>
+                        <h6>Phone: +01 2345 6789 12<span>|</span>Email: pain_center@gmail.com</h6>
+                        <div class="contact-social">
+                            <ul>
+                                <li><a class="hover-target" href=""><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a class="hover-target" href=""><i class="fab fa-instagram"></i></a></li>
+                                <li><a class="hover-target" href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a class="hover-target" href=""><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <p class="text-center">Copyright &copy; 2022 All Rights Reserved.</p>
+</footer>

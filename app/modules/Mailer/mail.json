@@ -1,0 +1,11 @@
+{
+  "name": "mail",
+  "module": "mail",
+  "action": "setup",
+  "options": {
+    "host": "smtp.gmail.com",
+    "port": 25,
+    "username": "koolhamzakoya@gmail.com",
+    "password": "hwmnplajqqoympvj"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "projectName": "Online_Injury",
+  "styleFile": "/css/style.css",
+  "assetsFolder": "/assets",
+  "designFramework": "bootstrap5",
+  "frameworks": [
+    {
+      "name": "fontawesome_5",
+      "type": "cdn"
+    },
+    {
+      "name": "bootstrap5",
+      "type": "local"
+    },
+    {
+      "name": "appConnect",
+      "type": "local"
+    }
+  ],
+  "hostingType": "firebase",
+  "runtime": "capacitor",
+  "webRootFolder": "/public",
+  "addBase": true,
+  "projectLinksType": "site",
+  "targets": [
+    {
+      "targetType": "firebase",
+      "name": "Development",
+      "remoteURL": "https://online-injury-treatments.web.app",
+      "databaseConnectionType": "sqlite",
+      "sqliteDbFile": "/Database.sqlite3",
+      "firebaseProjectID": "online-injury-treatments"
+    },
+    {
+      "targetType": "firebase",
+      "name": "Production",
+      "usage": "production",
+      "firebaseProjectID": "online-injury-treatments",
+      "remoteURL": "https://online-injury-treatments.web.app/",
+      "databaseConnectionType": "sqlite",
+      "sqliteDbFile": "/Database.sqlite3"
+    }
+  ],
+  "activeTarget": "Production",
+  "projectType": "web",
+  "firebaseProjectID": "online-injury-treatments",
+  "herokuProjectID": "pain-center"
+}

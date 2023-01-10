@@ -1,0 +1,30 @@
+{
+  "name": "Security",
+  "module": "auth",
+  "action": "provider",
+  "options": {
+    "secret": "5FeKRFsyl8isogh",
+    "provider": "Database",
+    "connection": "Database",
+    "passwordVerify": true,
+    "users": {
+      "table": "Staff_Registration",
+      "identity": "Staff_id",
+      "username": "Staff_Email",
+      "password": "Staff_Password"
+    },
+    "permissions": {
+      "Users": {
+        "table": "Staff_Registration",
+        "identity": "Staff_id",
+        "conditions": []
+      }
+    }
+  },
+  "meta": [
+    {
+      "name": "identity",
+      "type": "text"
+    }
+  ]
+}

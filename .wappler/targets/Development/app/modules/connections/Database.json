@@ -1,0 +1,16 @@
+{
+  "name": "Database",
+  "module": "dbconnector",
+  "action": "connect",
+  "options": {
+    "client": "sqlite3",
+    "connection": {
+      "filename": "/Database.sqlite3"
+    },
+    "meta": {},
+    "tz": "local"
+  },
+  "fileName": "Database.json",
+  "serverType": "node",
+  "actionFilePath": "file:///C:/Users/user/Desktop/University%20Documents/Online%20Injury/app/modules/connections/Database.json"
+}

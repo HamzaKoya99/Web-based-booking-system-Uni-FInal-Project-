@@ -1,0 +1,86 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="Staff_Registration" appConnect="local" components="{dmxBootstrap5Navigation:{},dmxValidator:{},dmxNotifications:{},dmxBootstrap5Toasts:{}}" -->
+<dmx-notifications id="notifies1" position="bottom" align="left" opacity="1.0"></dmx-notifications>
+<meta name="ac:route" content="/Staff_Registration">
+
+<body>
+    <header class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-end">
+                        <a class="navbar-brand me-auto" href="#">Pain Center</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1_collapse" aria-controls="navbar1_collapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container mt-5">
+        <form action="/api/Staff_Registration" dmx-on:success="notifies1.success('Account Created');serverconnectform1.reset()" is="dmx-serverconnect-form" method="post" id="serverconnectform1">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-7 col-md-5 text-center">
+                    <div class="fdb-box fdb-touch">
+                        <div class="row">
+                            <div class="col">
+                                <h1>Staff Registration</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mt-4">
+                                <input type="email" id="inp_email" name="Staff_Email" class="form-control" placeholder="Staff Email" required="" data-rule-email="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mt-4">
+                                <input type="text" id="inp_name" name="Staff_Name" class="form-control" placeholder="Staff Name" required="">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col">
+                                <input type="password" id="inp_password" name="Staff_Password" class="form-control mb-1" placeholder="Password" required="">
+                            </div>
+                            <div class="col">
+                                <input type="password" id="inp_confirm_password" name="Confirm Password" class="form-control mb-1" placeholder="Confirm Password" data-rule-equalto="Staff_Password">
+                                <p class="text-end"><a href="/Staff_LogIn" internal>Already have an account?</a></p>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col">
+                                <button id="register1_submit" class="btn bg-primary btn-primary" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer-bs">
+        <section class="contact-area" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="contact-content text-center">
+                            <div class="hr"></div>
+                            <h1>Pain Center</h1>
+                            <h6>221b Baker St, London NW1 6XE</h6>
+                            <h6>Phone: +01 2345 6789 12<span>|</span>Email: pain_center@gmail.com</h6>
+                            <div class="contact-social">
+                                <ul>
+                                    <li><a class="hover-target" href=""><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a class="hover-target" href=""><i class="fab fa-instagram"></i></a></li>
+                                    <li><a class="hover-target" href=""><i class="fab fa-twitter"></i></a></li>
+                                    <li><a class="hover-target" href=""><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <p class="text-center">Copyright &copy; 2022 All Rights Reserved.</p>
+
+    </footer>
+</body>
